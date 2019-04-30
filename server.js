@@ -1,23 +1,12 @@
-const mongoose = require("mongoose");
-
 const express = require("express");
-
-const users = require("./routes/api/users");
-const profile = require("./routes/api/profile");
-const posts = require("./routes/api/posts");
+const connectDB = require("./config/db");
 
 const app = express();
 
-// DB Config
-const db = require("./config/keys").mongoURI;
+// Connect Database
+connectDB();
 
-// Connect to MongoDB
-mongoose
-  .connect(db)
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
-
-app.get("/", (req, res) => res.send("Hello!"));
+app.get("/", (req, res) => res.send("API Running"));
 
 // Define Routes
 app.use("/api/users", require("./routes/api/users"));
