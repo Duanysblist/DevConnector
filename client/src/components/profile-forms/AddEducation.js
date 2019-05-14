@@ -95,7 +95,7 @@ const AddEducation = ({ addEducation, history }) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{' '}
-            Current in a program:
+            Currently in a program:
           </p>
         </div>
         <div class='form-group'>
