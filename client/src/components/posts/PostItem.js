@@ -41,15 +41,16 @@ const PostItem = ({
           <span class='comment-count'>{comments.length}</span>
         )}
       </Link>
-      {!auth.loading && user === auth.user._id && (
-        <button
-          onClick={e => deletePost(_id)}
-          type='button'
-          class='btn btn-danger'
-        >
-          <i class='fas fa-times' />
-        </button>
-      )}
+      {!auth.loading &&
+      user === auth.user._id && ( //Even thought this is taking away the button from the user, it is also protected on the backout so only the designated user can delete their own posts
+          <button
+            onClick={e => deletePost(_id)}
+            type='button'
+            class='btn btn-danger'
+          >
+            <i class='fas fa-times' />
+          </button>
+        )}
     </div>
   </div>
 );
